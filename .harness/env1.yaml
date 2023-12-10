@@ -1,7 +1,14 @@
 environment:
   name: env1
   identifier: env1
-  accountId: yLH53cCxRtSoYLOQVQrh4A
+  tags: {}
+  type: PreProduction
   orgIdentifier: default
   projectIdentifier: kanikatest
-  type: PreProduction
+  variables:
+    - name: abc
+      type: String
+      value: dgdf
+      description: ""
+      required: false
+  storeType: REMOTE
