@@ -1,0 +1,5 @@
+service:
+  name: sgf
+  identifier: sgf
+  orgIdentifier: default
+  projectIdentifier: kanikatest
