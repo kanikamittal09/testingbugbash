@@ -1,0 +1,7 @@
+environment:
+  name: ghg
+  identifier: ghg
+  accountId: yLH53cCxRtSoYLOQVQrh4A
+  orgIdentifier: default
+  projectIdentifier: kanikatest
+  type: PreProduction
