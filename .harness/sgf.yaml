@@ -3,3 +3,17 @@ service:
   identifier: sgf
   orgIdentifier: default
   projectIdentifier: kanikatest
+  serviceDefinition:
+    spec:
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - spec:
+                connectorRef: account.harnessImage
+                imagePath: library/nginx
+                tag: <+input>
+                digest: ""
+              identifier: docker
+              type: DockerRegistry
+    type: Kubernetes
