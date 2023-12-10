@@ -3,3 +3,6 @@ service:
   identifier: hjjjjjjj
   orgIdentifier: default
   projectIdentifier: kanikatest
+  serviceDefinition:
+    spec: {}
+    type: NativeHelm
