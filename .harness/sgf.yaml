@@ -16,4 +16,13 @@ service:
                 digest: ""
               identifier: docker
               type: DockerRegistry
+            - spec:
+                connectorRef: <+input>
+                imagePath: <+input>
+                tag: <+input>
+                digest: ""
+                region: <+input>
+                registryId: <+input>
+              identifier: ecr
+              type: Ecr
     type: Kubernetes
