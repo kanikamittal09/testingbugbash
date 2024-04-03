@@ -3,3 +3,19 @@ service:
   identifier: diffrepo_defaultbranch
   orgIdentifier: default
   projectIdentifier: kanikaTest
+  serviceDefinition:
+    spec:
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - name: diffrepo_defaultbranch
+              identifier: diffrepo_defaultbranch
+              template:
+                templateRef: testCustomArtifactSource
+                versionLabel: "1"
+                templateInputs:
+                  type: CustomArtifact
+                  spec:
+                    version: <+input>
+    type: Kubernetes
