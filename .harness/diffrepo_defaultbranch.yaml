@@ -1,0 +1,5 @@
+service:
+  name: diffrepo_defaultbranch
+  identifier: diffrepo_defaultbranch
+  orgIdentifier: default
+  projectIdentifier: kanikaTest
