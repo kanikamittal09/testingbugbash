@@ -1,0 +1,5 @@
+service:
+  name: repoBfeatureBranchProd
+  identifier: repoBfeatureBranchProd
+  orgIdentifier: default
+  projectIdentifier: CD_Triggers_Automation
