@@ -3,3 +3,17 @@ service:
   identifier: repoBmainBranch
   orgIdentifier: default
   projectIdentifier: DoNotDelete_kanikaTest
+  serviceDefinition:
+    spec:
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - spec:
+                connectorRef: account.DockerForRolloutAutomation
+                imagePath: library/nginx
+                tag: <+input>
+                digest: <+input>
+              identifier: docker
+              type: DockerRegistry
+    type: Kubernetes
