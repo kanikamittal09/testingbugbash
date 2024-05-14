@@ -1,0 +1,57 @@
+template:
+  name: stagetemplateRepo2nonDefault
+  identifier: stagetemplateRepo2nonDefault
+  type: Stage
+  projectIdentifier: KanikaTest
+  orgIdentifier: default
+  tags: {}
+  spec:
+    type: Deployment
+    spec:
+      deploymentType: Kubernetes
+      environment:
+        environmentRef: <+input>
+        deployToAll: false
+        environmentInputs: <+input>
+        serviceOverrideInputs: <+input>
+        infrastructureDefinitions: <+input>
+      service:
+        serviceRef: nginx
+        serviceInputs:
+          serviceDefinition:
+            type: Kubernetes
+            spec:
+              artifacts:
+                primary:
+                  primaryArtifactRef: docker
+                  sources:
+                    - identifier: docker
+                      type: DockerRegistry
+                      spec:
+                        tag: <+input>
+                        digest: <+input>
+      execution:
+        steps:
+          - step:
+              name: Rollout Deployment
+              identifier: rolloutDeployment
+              type: K8sRollingDeploy
+              timeout: 10m
+              spec:
+                skipDryRun: false
+                pruningEnabled: false
+        rollbackSteps:
+          - step:
+              name: Rollback Rollout Deployment
+              identifier: rollbackRolloutDeployment
+              type: K8sRollingRollback
+              timeout: 10m
+              spec:
+                pruningEnabled: false
+    failureStrategies:
+      - onFailure:
+          errors:
+            - AllErrors
+          action:
+            type: StageRollback
+  versionLabel: vstable
