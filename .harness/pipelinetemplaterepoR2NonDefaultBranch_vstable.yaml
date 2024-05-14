@@ -1,0 +1,39 @@
+template:
+  name: pipelinetemplaterepoR2NonDefaultBranch
+  identifier: pipelinetemplaterepoR2NonDefaultBranch
+  type: Pipeline
+  projectIdentifier: KanikaTest
+  orgIdentifier: default
+  tags: {}
+  spec:
+    stages:
+      - stage:
+          name: stage2
+          identifier: stage2
+          tags: {}
+          template:
+            templateRef: stagetemplateRepo2nonDefault
+            versionLabel: vstable
+            gitBranch: main
+            templateInputs:
+              type: Deployment
+              spec:
+                environment:
+                  environmentRef: <+input>
+                  environmentInputs: <+input>
+                  serviceOverrideInputs: <+input>
+                  infrastructureDefinitions: <+input>
+                service:
+                  serviceInputs:
+                    serviceDefinition:
+                      type: Kubernetes
+                      spec:
+                        artifacts:
+                          primary:
+                            sources:
+                              - identifier: docker
+                                type: DockerRegistry
+                                spec:
+                                  tag: <+input>
+                                  digest: <+input>
+  versionLabel: vstable
