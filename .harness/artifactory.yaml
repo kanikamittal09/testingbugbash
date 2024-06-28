@@ -3,3 +3,18 @@ service:
   identifier: artifactory
   orgIdentifier: default
   projectIdentifier: DoNotDelete_kanikaTest
+  serviceDefinition:
+    spec:
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - spec:
+                connectorRef: account.CDCNGAuto_Artifact7FVmH53Das
+                artifactDirectory: /
+                artifactPath: <+input>
+                repository: Venkat-Test-BT-274
+                repositoryFormat: generic
+              identifier: genric
+              type: ArtifactoryRegistry
+    type: Ssh
