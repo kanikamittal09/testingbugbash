@@ -1,0 +1,24 @@
+---
+service:
+  serviceDefinition:
+    type: "Kubernetes"
+    spec:
+      artifacts:
+        primary:
+          primaryArtifactRef: "<+input>"
+          sources:
+          - spec:
+              connectorRef: "account.CDCNGAuto_Awsbh7RbXBnhL"
+              imagePath: "<+input>"
+              tag: "<+input>"
+              digest: ""
+              region: "<+input>"
+            identifier: "ecr"
+            type: "Ecr"
+  gitOpsEnabled: false
+  orgIdentifier: "default"
+  projectIdentifier: "DoNotDelete_kanikaTest"
+  description: ""
+  tags: {}
+  identifier: "fgdfgPIP22143_Clone_Clone"
+  name: "fgdfgPIP22143 - Clone - Clone"
