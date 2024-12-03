@@ -1,0 +1,18 @@
+service:
+  name: occ
+  identifier: occ
+  serviceDefinition:
+    type: Kubernetes
+    spec:
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - spec:
+                connectorRef: account.CDCNG_Docker_ZuEPnpb0bK
+                imagePath: <+input>
+                tag: <+input>
+                digest: ""
+              identifier: dda
+              type: DockerRegistry
+  gitOpsEnabled: false

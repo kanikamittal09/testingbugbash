@@ -1,0 +1,19 @@
+service:
+  name: repoBfeatureBranchProd
+  identifier: repoBfeatureBranchProd
+  orgIdentifier: default
+  projectIdentifier: CD_Triggers_Automation
+  serviceDefinition:
+    spec:
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - spec:
+                connectorRef: account.dockerhub
+                imagePath: library/nginx
+                tag: <+input>
+                digest: <+input>
+              identifier: docker
+              type: DockerRegistry
+    type: Kubernetes
