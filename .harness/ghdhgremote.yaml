@@ -1,0 +1,6 @@
+environment:
+  name: ghdhgremote
+  identifier: ghdhgremote
+  orgIdentifier: default
+  projectIdentifier: p1
+  type: Production
