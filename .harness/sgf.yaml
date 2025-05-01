@@ -1,0 +1,28 @@
+service:
+  name: sgf
+  identifier: sgf
+  orgIdentifier: default
+  projectIdentifier: kanikatest
+  serviceDefinition:
+    spec:
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - spec:
+                connectorRef: account.harnessImage
+                imagePath: library/nginx
+                tag: <+input>
+                digest: ""
+              identifier: docker
+              type: DockerRegistry
+            - spec:
+                connectorRef: <+input>
+                imagePath: <+input>
+                tag: <+input>
+                digest: ""
+                region: <+input>
+                registryId: <+input>
+              identifier: ecr
+              type: Ecr
+    type: Kubernetes

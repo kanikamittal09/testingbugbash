@@ -1,0 +1,18 @@
+service:
+  name: dock
+  identifier: dock
+  serviceDefinition:
+    type: Kubernetes
+    spec:
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - spec:
+                connectorRef: quay
+                imagePath: <+input>
+                tag: <+input>
+                digest: ""
+              identifier: dd
+              type: DockerRegistry
+  gitOpsEnabled: false
