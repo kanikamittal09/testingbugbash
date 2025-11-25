@@ -1,0 +1,6 @@
+environment:
+  name: gfdf
+  identifier: gfdf
+  orgIdentifier: default
+  projectIdentifier: DoNotDelete_KanikaTest
+  type: Production
